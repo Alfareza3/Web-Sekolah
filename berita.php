@@ -1,0 +1,34 @@
+<?php include 'partials/header.php'; ?>
+<?php include 'partials/navbar.php'; ?>
+<?php include 'koneksi.php'; ?>
+
+<div class="container py-4">
+  <h2 class="mb-4 text-center">Berita Sekolah</h2>
+  <div class="row">
+    <?php
+    $result = mysqli_query($conn, "SELECT * FROM berita ORDER BY tanggal DESC");
+    while ($row = mysqli_fetch_assoc($result)) {
+      echo "
+      <div class='col-md-4 mb-4'>
+        <div class='card h-100 d-flex flex-column'>
+          <div class='card-body d-flex flex-column'>
+            <h5>
+              <a href='berita-detail.php?id={$row['id']}' class='text-decoration-none text-dark'>
+                {$row['judul']}
+              </a>
+            </h5>
+            <p class='text-muted mb-1'>🖊️ {$row['penulis']}</p>
+            <p class='flex-grow-1'>" . substr($row['isi'], 0, 100) . "...</p>
+            <a href='berita-detail.php?id={$row['id']}' class='btn btn-sm text-white mt-2' style='background-color: #1E3A8A; width: fit-content;'>📖 Baca di sini</a>
+          </div>
+          <div class='card-footer'>
+            <small class='text-muted'>Tanggal: {$row['tanggal']}</small>
+          </div>
+        </div>
+      </div>";
+    }
+    ?>
+  </div>
+</div>
+
+<?php include 'partials/footer.php'; ?>
