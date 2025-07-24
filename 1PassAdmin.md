@@ -1,2 +1,2 @@
 User: admin
-Pass: admin123
+Pass: 123
