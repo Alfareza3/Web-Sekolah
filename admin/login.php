@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body style="background-color: #f8f9fa;">
   <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
     <div class="card shadow p-4" style="width: 350px;">
-      <h4 class="mb-3 text-center text-white py-2" style="background-color: #1E3A8A;">Login Admin</h4>
+      <h4 class="mb-3 text-center text-black py-2">Login Admin</h4>
       <?php if (isset($error)): ?>
         <div class="alert alert-danger"><?= $error ?></div>
       <?php endif; ?>

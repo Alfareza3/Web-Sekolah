@@ -15,10 +15,11 @@
         <li class="nav-item"><a class="nav-link" href="profil.php">Profil</a></li>
         <li class="nav-item"><a class="nav-link" href="visimisi.php">Visi & Misi</a></li>
         <li class="nav-item"><a class="nav-link" href="berita.php">Berita</a></li>
+        <li class="nav-item"><a class="nav-link" href="agenda.php">Agenda</a></li>
         <li class="nav-item"><a class="nav-link" href="direktori.php">Direktori</a></li>
         <li class="nav-item"><a class="nav-link" href="galeri.php">Galeri</a></li>
         <li class="nav-item"><a class="nav-link" href="kontak.php">Kontak</a></li>
-        <a class="nav-link" href="admin/login.php">🔐 Admin</a>
+        <a class="nav-link" href="admin/login.php">Admin🔐</a>
       </ul>
     </div>
   </div>
