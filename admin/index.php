@@ -12,6 +12,8 @@ include '../koneksi.php';
   <meta charset="UTF-8">
   <title>Dashboard Admin</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body style="background-color: #f5f5f5;">
   <!-- Navbar -->
@@ -49,7 +51,7 @@ include '../koneksi.php';
                 <td>{$row['tanggal']}</td>
                 <td class='text-center'>
                   <a href='edit-berita.php?id={$row['id']}' class='btn btn-sm btn-warning'>Edit</a>
-                  <a href='hapus-berita.php?id={$row['id']}' class='btn btn-sm btn-danger' onclick=\"return confirm('Hapus berita ini?')\">Hapus</a>
+                  <a href='#' class='btn btn-sm btn-danger' onclick=\"confirmDelete('hapus-berita.php?id={$row['id']}')\">Hapus</a>
                 </td>
               </tr>";
             }
@@ -83,7 +85,7 @@ include '../koneksi.php';
                 <td>{$row['tanggal']}</td>
                 <td class='text-center'>
                   <a href='edit-agenda.php?id={$row['id']}' class='btn btn-sm btn-warning'>Edit</a>
-                  <a href='hapus-agenda.php?id={$row['id']}' class='btn btn-sm btn-danger' onclick=\"return confirm('Hapus agenda ini?')\">Hapus</a>
+                  <a href='#' class='btn btn-sm btn-danger' onclick=\"confirmDelete('hapus-agenda.php?id={$row['id']}')\">Hapus</a>
                 </td>
               </tr>";
             }
@@ -133,7 +135,7 @@ include '../koneksi.php';
                 </td>
                 <td>
                   <a href='edit-direktori.php?id={$row['id']}' class='btn btn-sm btn-warning'>Edit</a>
-                  <a href='hapus-direktori.php?id={$row['id']}' class='btn btn-sm btn-danger' onclick=\"return confirm('Hapus data ini?')\">Hapus</a>
+                  <a href='#' class='btn btn-sm btn-danger' onclick=\"confirmDelete('hapus-direktori.php?id={$row['id']}')\">Hapus</a>
                 </td>
               </tr>";
             }
@@ -175,8 +177,8 @@ include '../koneksi.php';
                   <?php endif; ?>
                 </td>
                 <td>
-                  <a href="edit-galeri.php?id=<?= $g['id'] ?>" class="btn btn-sm btn-warning">Edit</a>
-                  <a href="hapus-galeri.php?id=<?= $g['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Hapus item ini?')">Hapus</a>
+                  <a href='edit-galeri.php?id=<?= $g['id'] ?>' class='btn btn-sm btn-warning'>Edit</a>
+                  <a href='#' class='btn btn-sm btn-danger' onclick="confirmDelete('hapus-galeri.php?id=<?= $g['id'] ?>')">Hapus</a>
                 </td>
               </tr>
             <?php endwhile; ?>
@@ -185,10 +187,9 @@ include '../koneksi.php';
       </div>
     </div>
 
-
-    <!-- KOMENTAR -->
+    <!-- Kontak -->
     <div class="mb-5">
-      <h4 class="mb-3">💬 Komentar Pengunjung</h4>
+      <h4 class="mb-3">💬 Kritik & Saran Pengunjung</h4>
       <div class="table-responsive">
         <table class="table table-bordered">
           <thead class="table-secondary text-center">
@@ -212,7 +213,41 @@ include '../koneksi.php';
                 <td><a href='".htmlspecialchars($row['url'])."' target='_blank'>".htmlspecialchars($row['url'])."</a></td>
                 <td>{$row['waktu_submit']}</td>
                 <td class='text-center'>
-                  <a href='hapus-komentar.php?id={$row['id']}' class='btn btn-sm btn-danger' onclick=\"return confirm('Hapus komentar ini?')\">Hapus</a>
+                  <a href='#' class='btn btn-sm btn-danger' onclick=\"confirmDelete('hapus-komentar.php?id={$row['id']}')\">Hapus</a>
+                </td>
+              </tr>";
+            }
+            ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- KOMENTAR BERITA -->
+    <div class="mb-5">
+      <h4 class="mb-3">💬 Komentar Berita</h4>
+      <div class="table-responsive">
+        <table class="table table-bordered align-middle text-center">
+          <thead class="table-secondary">
+            <tr>
+              <th>Nama</th>
+              <th>Isi Komentar</th>
+              <th>ID Berita</th>
+              <th>Waktu</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+            $komentar = mysqli_query($conn, "SELECT * FROM komentar_berita ORDER BY tanggal DESC");
+            while ($row = mysqli_fetch_assoc($komentar)) {
+              echo "<tr>
+                <td>" . htmlspecialchars($row['nama']) . "</td>
+                <td class='text-start'>" . nl2br(htmlspecialchars($row['komentar'])) . "</td>
+                <td>" . $row['id_berita'] . "</td>
+                <td>" . $row['tanggal'] . "</td>
+                <td>
+                  <a href='#' class='btn btn-sm btn-danger' onclick=\"confirmDelete('hapus-komentar-berita.php?id={$row['id']}')\">Hapus</a>
                 </td>
               </tr>";
             }
@@ -223,5 +258,24 @@ include '../koneksi.php';
     </div>
 
   </div>
+
+  <script>
+    function confirmDelete(url) {
+      Swal.fire({
+        title: 'Apakah Anda yakin?',
+        text: "Data ini akan dihapus!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Ya, hapus!',
+        cancelButtonText: 'Batal'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = url;
+        }
+      });
+    }
+  </script>
 </body>
 </html>

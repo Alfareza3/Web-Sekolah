@@ -16,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $kontak = $_POST['kontak'];
   $tingkat = $_POST['tingkat'];
 
-  // Upload foto
   $foto = $_FILES['foto']['name'];
   $tmp = $_FILES['foto']['tmp_name'];
   $path = '../assets/image/uploads/' . $foto;
@@ -63,10 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <option value="Staff">Staff</option>
       </select>
     </div>
-    <!-- <div class="mb-3">
-      <label>Kelas (jika murid)</label>
-      <input type="text" name="kelas" class="form-control">
-    </div> -->
     <div class="mb-3">
       <label>Kelas 10 / 11 / 12 (jika murid)</label>
       <select name="tingkat" class="form-select">

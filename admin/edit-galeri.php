@@ -73,7 +73,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       document.getElementById('foto-input').classList.toggle('d-none', val !== 'foto');
       document.getElementById('video-input').classList.toggle('d-none', val !== 'video');
     }
-    // Set input visibility on page load
     window.onload = function () {
       toggleInput("<?= $data['jenis'] ?>");
     };

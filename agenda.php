@@ -28,8 +28,8 @@ $result = $conn->query("SELECT * FROM agenda ORDER BY tanggal ASC");
   <?php endif; ?>
 </div>
 
-  <!-- Tombol Akses Cepat -->
-  <div class="text-center mt-5">
+  <!-- Tombol Akses Lainnya -->
+  <div class="text-center mt-5 mb-5">
     <h4 class="mb-3">🔗 Akses Lainnya</h4>
     <div class="d-flex flex-wrap justify-content-center gap-3">
       <a href="index.php" class="btn btn-dark px-4 py-2 rounded-pill shadow-sm">🏠 Beranda</a>

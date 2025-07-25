@@ -24,13 +24,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
 }
 
-// Ambil semua komentar dari database (termasuk url)
 $komentar_query = "SELECT nama, komentar, url, waktu_submit FROM kontak ORDER BY waktu_submit DESC";
 $hasil_komentar = $conn->query($komentar_query);
 ?>
 
 <div class="container my-5">
-  <h2 class="mb-4 text-center">Hubungi Kami</h2>
+  <h2 class="mb-4 text-center">Kontak</h2>
+  <p class="text-center mb-4 text-muted">
+    Kirimkan pertanyaan, kritik, saran, atau masukan untuk SMA Kristen Sunodia melalui formulir berikut.
+  </p>
 
   <?= $pesan ?>
 
@@ -46,7 +48,7 @@ $hasil_komentar = $conn->query($komentar_query);
           <input type="email" class="form-control" name="email" required>
         </div>
         <div class="mb-3">
-          <label for="komentar" class="form-label">Komentar</label>
+          <label for="komentar" class="form-label">Kritik & Saran</label>
           <textarea class="form-control" name="komentar" rows="4" required></textarea>
         </div>
         <div class="mb-3">
@@ -67,30 +69,7 @@ $hasil_komentar = $conn->query($komentar_query);
     </div>
   </div>
 
-  <hr class="my-5">
-
-  <h4 class="text-center mb-4">Komentar Pengunjung</h4>
-  <?php if ($hasil_komentar->num_rows > 0): ?>
-    <div class="list-group">
-      <?php while ($row = $hasil_komentar->fetch_assoc()): ?>
-        <div class="list-group-item">
-          <h6 class="mb-1">
-            <?= htmlspecialchars($row['nama']) ?>
-            <small class="text-muted"><?= $row['waktu_submit'] ?></small>
-          </h6>
-          <p class="mb-1"><?= nl2br(htmlspecialchars($row['komentar'])) ?></p>
-          <?php if (!empty($row['url'])): ?>
-            <small>URL: <a href="<?= htmlspecialchars($row['url']) ?>" target="_blank"><?= htmlspecialchars($row['url']) ?></a></small>
-          <?php endif; ?>
-        </div>
-      <?php endwhile; ?>
-    </div>
-  <?php else: ?>
-    <p class="text-muted text-center">Belum ada komentar.</p>
-  <?php endif; ?>
-</div>
-
-  <!-- Tombol Akses Cepat -->
+  <!-- Tombol Akses Lainyya -->
   <div class="text-center mt-5">
     <h4 class="mb-3">🔗 Akses Lainnya</h4>
     <div class="d-flex flex-wrap justify-content-center gap-3">
@@ -102,5 +81,5 @@ $hasil_komentar = $conn->query($komentar_query);
       <a href="hhh.php" class="btn btn-danger px-4 py-2 rounded-pill shadow-sm" target="_blank">📝 Daftar PPDB</a>
     </div>
   </div>
-
+</div>
 <?php require_once 'partials/footer.php'; ?>

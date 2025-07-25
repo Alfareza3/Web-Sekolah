@@ -6,10 +6,8 @@ if (!isset($_SESSION['admin'])) {
 }
 include '../koneksi.php';
 
-$id = $_GET['id'];
-
-mysqli_query($conn, "DELETE FROM direktori WHERE id=$id");
-
+$id = (int) $_GET['id'];
+mysqli_query($conn, "DELETE FROM komentar_berita WHERE id = $id");
 header("Location: index.php");
 exit;
 ?>

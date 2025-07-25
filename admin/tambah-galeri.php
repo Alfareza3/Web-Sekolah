@@ -16,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tmp = $_FILES['nama_file']['tmp_name'];
     $target = "../assets/image/uploads/" . $foto;
 
-    // Cek dan buat folder jika belum ada
     if (!is_dir("../assets/image/uploads")) {
       mkdir("../assets/image/uploads", 0777, true);
     }
@@ -27,10 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       die("Gagal upload foto.");
     }
   } else {
-    $nama_file = $_POST['nama_file']; // URL video
+    $nama_file = $_POST['nama_file'];
   }
 
-  // Masukkan ke database
   $stmt = $conn->prepare("INSERT INTO galeri (nama_file, judul, jenis, tanggal_upload) VALUES (?, ?, ?, ?)");
   $stmt->bind_param("ssss", $nama_file, $judul, $jenis, $tanggal);
   $stmt->execute();
@@ -71,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="mb-3 d-none" id="video-input">
       <label for="nama_file_video" class="form-label">Link YouTube</label>
-      <input type="url" name="nama_file" class="form-control" placeholder="https://youtube.com/..." >
+      <input type="url" name="nama_file" class="form-control" placeholder="Sertakan Embed" >
     </div>
 
     <button type="submit" class="btn btn-primary">Simpan</button>

@@ -59,10 +59,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <option value="Staff" <?= $data['kategori'] == 'Staff' ? 'selected' : '' ?>>Staff</option>
       </select>
     </div>
-    <!-- <div class="mb-3">
-      <label>Kelas</label>
-      <input type="text" name="kelas" class="form-control" value="<?= $data['kelas'] ?>">
-    </div> -->
     <div class="mb-3">
       <label>Kelas (10 / 11 / 12)</label>
       <select name="tingkat" class="form-select">

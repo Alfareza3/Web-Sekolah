@@ -150,6 +150,35 @@ INSERT INTO `galeri` VALUES (1,'2.jpeg','Upacara Agustus','foto','2025-07-24'),(
 UNLOCK TABLES;
 
 --
+-- Table structure for table `komentar_berita`
+--
+
+DROP TABLE IF EXISTS `komentar_berita`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `komentar_berita` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_berita` int NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `komentar` text NOT NULL,
+  `tanggal` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `id_berita` (`id_berita`),
+  CONSTRAINT `komentar_berita_ibfk_1` FOREIGN KEY (`id_berita`) REFERENCES `berita` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `komentar_berita`
+--
+
+LOCK TABLES `komentar_berita` WRITE;
+/*!40000 ALTER TABLE `komentar_berita` DISABLE KEYS */;
+INSERT INTO `komentar_berita` VALUES (4,2,'Dimas','GOOD','2025-07-25 10:39:34'),(5,3,'Dimas','Great','2025-07-25 10:39:49'),(6,1,'Dimas','Exellent','2025-07-25 10:40:19');
+/*!40000 ALTER TABLE `komentar_berita` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `kontak`
 --
 
@@ -173,7 +202,7 @@ CREATE TABLE `kontak` (
 
 LOCK TABLES `kontak` WRITE;
 /*!40000 ALTER TABLE `kontak` DISABLE KEYS */;
-INSERT INTO `kontak` VALUES (1,'Dimas','admin@gmail.com','SUNSHINE','https://www.youtube.com/watch?v=UJDK8X5K9mw&list=RDUJDK8X5K9mw&start_radio=1','2025-07-21 08:39:07'),(2,'Dimas','betulan@gmail.com','SLIDE AWAY','https://www.youtube.com/watch?v=3GCSUSwcDwg&list=RDH1Wbu_AF2e4&index=7','2025-07-23 03:52:36');
+INSERT INTO `kontak` VALUES (2,'Dimas','betulan@gmail.com','SLIDE AWAY','https://www.youtube.com/watch?v=3GCSUSwcDwg&list=RDH1Wbu_AF2e4&index=7','2025-07-23 03:52:36');
 /*!40000 ALTER TABLE `kontak` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -186,4 +215,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-07-24 15:03:00
+-- Dump completed on 2025-07-25 10:42:44

@@ -13,7 +13,6 @@ include 'koneksi.php';
   foreach ($kategori_list as $kategori):
     echo "<h4 class='mb-3'>{$kategori}</h4>";
 
-    // Untuk murid: dikelompokkan berdasarkan tingkat (10, 11, 12)
     if ($kategori === 'Murid'):
       $tingkat_list = ['12', '11', '10'];
       foreach ($tingkat_list as $tingkat):
@@ -46,7 +45,6 @@ include 'koneksi.php';
         endif;
       endforeach;
 
-    // Untuk Guru & Staff: langsung ditampilkan
     else:
       $query = mysqli_query($conn, "SELECT * FROM direktori WHERE kategori='$kategori' ORDER BY nama ASC");
       if (mysqli_num_rows($query) > 0):
@@ -79,8 +77,8 @@ include 'koneksi.php';
   ?>
 </div>
 
-  <!-- Tombol Akses Cepat -->
-  <div class="text-center mt-5">
+  <!-- Tombol Akses Lainnya -->
+  <div class="text-center mt-5 mb-5">
     <h4 class="mb-3">🔗 Akses Lainnya</h4>
     <div class="d-flex flex-wrap justify-content-center gap-3">
       <a href="index.php" class="btn btn-dark px-4 py-2 rounded-pill shadow-sm">🏠 Beranda</a>

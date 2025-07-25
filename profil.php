@@ -19,48 +19,46 @@
       </div>
     </div>
 
-<!-- KANAN: Identitas Sekolah -->
-<div class="col-md-6">
-  <div class="card p-4 shadow-sm h-100">
-    <h5 class="mb-3 border-bottom pb-2">Identitas Sekolah</h5>
-    <ul class="list-unstyled">
-      <li class="d-flex justify-content-between border-bottom py-1">
-        <span><strong>NPSN</strong></span>
-        <span>30404179</span>
-      </li>
-      <li class="d-flex justify-content-between border-bottom py-1">
-        <span><strong>Status</strong></span>
-        <span>Swasta</span>
-      </li>
-      <li class="d-flex justify-content-between border-bottom py-1">
-        <span><strong>Bentuk Pendidikan</strong></span>
-        <span>SMA</span>
-      </li>
-      <li class="d-flex justify-content-between border-bottom py-1">
-        <span><strong>Status Kepemilikan</strong></span>
-        <span>Yayasan Kristen Sunodia</span>
-      </li>
-      <li class="d-flex justify-content-between border-bottom py-1">
-        <span><strong>SK Pendirian Sekolah</strong></span>
-        <span>421.3/1372/PPIV.B/12/2004</span>
-      </li>
-      <li class="d-flex justify-content-between border-bottom py-1">
-        <span><strong>Tanggal SK Pendirian</strong></span>
-        <span>09 September 2002</span>
-      </li>
-      <li class="d-flex justify-content-between border-bottom py-1">
-        <span><strong>SK Izin Operasional</strong></span>
-        <span>421.4/7939/Disdikbud.III/2020</span>
-      </li>
-      <li class="d-flex justify-content-between py-1">
-        <span><strong>Tanggal SK Izin Operasional</strong></span>
-        <span>23 November 2020</span>
-      </li>
-    </ul>
-  </div>
-</div>
-
-
+    <!-- KANAN: Identitas Sekolah -->
+    <div class="col-md-6">
+      <div class="card p-4 shadow-sm h-100">
+        <h5 class="mb-3 border-bottom pb-2">Identitas Sekolah</h5>
+        <ul class="list-unstyled">
+          <li class="d-flex justify-content-between border-bottom py-1">
+            <span><strong>NPSN</strong></span>
+            <span>30404179</span>
+          </li>
+          <li class="d-flex justify-content-between border-bottom py-1">
+            <span><strong>Status</strong></span>
+            <span>Swasta</span>
+          </li>
+          <li class="d-flex justify-content-between border-bottom py-1">
+            <span><strong>Bentuk Pendidikan</strong></span>
+            <span>SMA</span>
+          </li>
+          <li class="d-flex justify-content-between border-bottom py-1">
+            <span><strong>Status Kepemilikan</strong></span>
+            <span>Yayasan Kristen Sunodia</span>
+          </li>
+          <li class="d-flex justify-content-between border-bottom py-1">
+            <span><strong>SK Pendirian Sekolah</strong></span>
+            <span>421.3/1372/PPIV.B/12/2004</span>
+          </li>
+          <li class="d-flex justify-content-between border-bottom py-1">
+            <span><strong>Tanggal SK Pendirian</strong></span>
+            <span>09 September 2002</span>
+          </li>
+          <li class="d-flex justify-content-between border-bottom py-1">
+            <span><strong>SK Izin Operasional</strong></span>
+            <span>421.4/7939/Disdikbud.III/2020</span>
+          </li>
+          <li class="d-flex justify-content-between py-1">
+            <span><strong>Tanggal SK Izin Operasional</strong></span>
+            <span>23 November 2020</span>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <!-- Bagian Deskripsi Sekolah -->
@@ -74,8 +72,8 @@
   </div>
 </div>
 
-  <!-- Tombol Akses Cepat -->
-  <div class="text-center mt-5">
+  <!-- Tombol Akses Lainnya -->
+  <div class="text-center mt-5 mb-5">
     <h4 class="mb-3">🔗 Akses Lainnya</h4>
     <div class="d-flex flex-wrap justify-content-center gap-3">
       <a href="index.php" class="btn btn-dark px-4 py-2 rounded-pill shadow-sm">🏠 Beranda</a>
@@ -86,6 +84,5 @@
       <a href="hhh.php" class="btn btn-danger px-4 py-2 rounded-pill shadow-sm" target="_blank">📝 Daftar PPDB</a>
     </div>
   </div>
-
 
 <?php include 'partials/footer.php'; ?>
