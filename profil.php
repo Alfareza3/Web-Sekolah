@@ -4,8 +4,6 @@
 <div class="container my-5">
   <h2 class="text-center mb-4">Profil SMA Kristen Sunodia</h2>
   <div class="row g-4">
-    
-    <!-- KIRI: Profil Singkat -->
     <div class="col-md-6">
       <div class="card p-4 shadow-sm h-100">
         <div class="text-center">
@@ -18,8 +16,6 @@
         <p><strong>Waktu Belajar:</strong> Sehari penuh, 5 hari per minggu</p>
       </div>
     </div>
-
-    <!-- KANAN: Identitas Sekolah -->
     <div class="col-md-6">
       <div class="card p-4 shadow-sm h-100">
         <h5 class="mb-3 border-bottom pb-2">Identitas Sekolah</h5>
@@ -60,8 +56,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Bagian Deskripsi Sekolah -->
   <div class="mt-5">
     <div class="card p-4 shadow-sm">
       <h5 class="mb-3">Tentang Sekolah</h5>
@@ -71,8 +65,6 @@
     </div>
   </div>
 </div>
-
-  <!-- Tombol Akses Lainnya -->
   <div class="text-center mt-5 mb-5">
     <h4 class="mb-3">🔗 Akses Lainnya</h4>
     <div class="d-flex flex-wrap justify-content-center gap-3">

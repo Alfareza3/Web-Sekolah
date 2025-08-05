@@ -33,8 +33,6 @@
     </div>
   <?php endif; ?>
 </div>
-
-  <!-- Tombol Akses Lainnya -->
   <div class="text-center mt-5 mb-5">
     <h4 class="mb-3">🔗 Akses Lainnya</h4>
     <div class="d-flex flex-wrap justify-content-center gap-3">

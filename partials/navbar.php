@@ -1,4 +1,3 @@
-<!-- navbar.php -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -18,8 +17,6 @@
   </style>
 </head>
 <body>
-
-<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1E3A8A;">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="index.php">
@@ -29,7 +26,6 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.php">Beranda</a></li>
@@ -45,8 +41,6 @@
     </div>
   </div>
 </nav>
-
-<!-- Info Kontak -->
 <div class="bg-light py-2 border-bottom shadow-sm">
   <div class="container text-center text-md-start d-md-flex justify-content-between align-items-center small">
     <div>
@@ -55,8 +49,6 @@
     </div>
   </div>
 </div>
-
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

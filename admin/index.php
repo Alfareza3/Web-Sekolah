@@ -16,7 +16,6 @@ include '../koneksi.php';
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body style="background-color: #f5f5f5;">
-  <!-- Navbar -->
   <nav class="navbar navbar-dark" style="background-color: #1E3A8A;">
     <div class="container-fluid">
       <span class="navbar-brand mb-0 h1">Dashboard Admin</span>
@@ -27,7 +26,6 @@ include '../koneksi.php';
   </nav>
 
   <div class="container py-4">
-    <!-- BERITA -->
     <div class="mb-5">
       <h4 class="mb-3">📰 Berita</h4>
       <a href="tambah-berita.php" class="btn text-white mb-3" style="background-color: #1E3A8A;">➕ Tambah Berita</a>
@@ -60,8 +58,6 @@ include '../koneksi.php';
         </table>
       </div>
     </div>
-
-    <!-- AGENDA -->
     <div class="mb-5">
       <h4 class="mb-3">📅 Agenda Sekolah</h4>
       <a href="tambah-agenda.php" class="btn text-white mb-3" style="background-color: #1E3A8A;">➕ Tambah Agenda</a>
@@ -94,8 +90,6 @@ include '../koneksi.php';
         </table>
       </div>
     </div>
-
-    <!-- DIREKTORI -->
     <div class="mb-5">
       <h4 class="mb-3">👨‍🏫 Direktori Sekolah</h4>
       <a href="tambah-direktori.php" class="btn btn-success mb-3">➕ Tambah Data</a>
@@ -144,8 +138,6 @@ include '../koneksi.php';
         </table>
       </div>
     </div>
-
-    <!-- GALERI -->
     <div class="mb-5">
       <h4 class="mb-3">🖼️ Galeri</h4>
       <a href="tambah-galeri.php" class="btn btn-primary mb-3">➕ Tambah Galeri</a>
@@ -186,8 +178,6 @@ include '../koneksi.php';
         </table>
       </div>
     </div>
-
-    <!-- Kontak -->
     <div class="mb-5">
       <h4 class="mb-3">💬 Kritik & Saran Pengunjung</h4>
       <div class="table-responsive">
@@ -222,8 +212,6 @@ include '../koneksi.php';
         </table>
       </div>
     </div>
-
-    <!-- KOMENTAR BERITA -->
     <div class="mb-5">
       <h4 class="mb-3">💬 Komentar Berita</h4>
       <div class="table-responsive">

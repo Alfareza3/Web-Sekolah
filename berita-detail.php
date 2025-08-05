@@ -5,20 +5,13 @@ include 'koneksi.php';
 
 $pesan = '';
 $data = null;
-
-// Cek apakah ID berita tersedia
 if (isset($_GET['id'])) {
   $id = (int) $_GET['id'];
-
-  // Ambil data berita
   $result = mysqli_query($conn, "SELECT * FROM berita WHERE id = $id");
   $data = mysqli_fetch_assoc($result);
-
-  // Proses form komentar jika disubmit
   if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nama'], $_POST['komentar'])) {
     $nama = htmlspecialchars(trim($_POST['nama']));
     $komentar = htmlspecialchars(trim($_POST['komentar']));
-
     if (!empty($nama) && !empty($komentar)) {
       $stmt = $conn->prepare("INSERT INTO komentar_berita (id_berita, nama, komentar) VALUES (?, ?, ?)");
       $stmt->bind_param("iss", $id, $nama, $komentar);
@@ -32,8 +25,6 @@ if (isset($_GET['id'])) {
       $pesan = '<div class="alert alert-warning">Nama dan komentar wajib diisi.</div>';
     }
   }
-
-  // Ambil komentar yang terkait
   $komentar_result = mysqli_query($conn, "SELECT * FROM komentar_berita WHERE id_berita = $id ORDER BY tanggal DESC");
 }
 ?>
@@ -46,15 +37,9 @@ if (isset($_GET['id'])) {
     <p><?= nl2br(htmlspecialchars($data['isi'])) ?></p>
 
     <a href="berita.php" class="btn btn-secondary mt-3">← Kembali ke Berita</a>
-
     <hr class="my-5">
-
-    <!-- Komentar -->
     <h4 class="mb-4">💬 Komentar Pengunjung</h4>
-
     <?= $pesan ?>
-
-    <!-- Form Komentar -->
     <form method="POST" class="mb-5">
       <div class="mb-3">
         <label for="nama" class="form-label">Nama</label>
@@ -66,8 +51,6 @@ if (isset($_GET['id'])) {
       </div>
       <button type="submit" class="btn btn-primary">Kirim Komentar</button>
     </form>
-
-    <!-- Daftar Komentar -->
     <?php if (mysqli_num_rows($komentar_result) > 0): ?>
       <?php while ($row = mysqli_fetch_assoc($komentar_result)) : ?>
         <div class="border-bottom pb-2 mb-3">
@@ -84,8 +67,6 @@ if (isset($_GET['id'])) {
     <div class="alert alert-warning">Berita tidak ditemukan.</div>
   <?php endif; ?>
 </div>
-
-  <!-- Tombol Akses Lainnya -->
   <div class="text-center mt-5 mb-5">
     <h4 class="mb-3">🔗 Akses Lainnya</h4>
     <div class="d-flex flex-wrap justify-content-center gap-3">

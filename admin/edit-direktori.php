@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $jabatan = $_POST['jabatan'];
   $kontak = $_POST['kontak'];
 
-  // jika upload foto baru
   if ($_FILES['foto']['name']) {
     $foto = $_FILES['foto']['name'];
     $tmp = $_FILES['foto']['tmp_name'];

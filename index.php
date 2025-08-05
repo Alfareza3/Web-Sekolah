@@ -10,7 +10,6 @@
   <hr class="my-4">
 
   <div class="row text-center">
-    <!-- Card 1 -->
     <div class="col-md-4 mb-4">
       <div class="card h-100 shadow-sm border-0">
         <img src="assets/image/2.jpeg" class="card-img-top" alt="Tentang Sunodia">
@@ -26,8 +25,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Card 2 -->
     <div class="col-md-4 mb-4">
       <div class="card h-100 shadow-sm border-0">
         <img src="assets/image/3.png" class="card-img-top" alt="Kehidupan Sekolah">
@@ -43,8 +40,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Card 3 -->
     <div class="col-md-4 mb-4">
       <div class="card h-100 shadow-sm border-0">
         <img src="assets/image/1.jpeg" class="card-img-top" alt="Program Unggulan">
@@ -61,8 +56,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Tombol Akses Lainnya -->
   <div class="text-center mt-5 mb-5">
     <h4 class="mb-3">🔗 Akses Lainnya</h4>
     <div class="d-flex flex-wrap justify-content-center gap-3">
